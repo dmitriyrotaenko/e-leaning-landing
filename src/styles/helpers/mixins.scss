@@ -9,3 +9,8 @@
 @mixin fluid-typo($max: 48, $min: 16) {
   font-size: fluid($max, $min);
 }
+
+@mixin square($length) {
+  width: $length;
+  height: $length;
+}
