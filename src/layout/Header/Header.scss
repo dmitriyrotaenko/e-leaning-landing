@@ -1,0 +1,65 @@
+.header {
+  border-block-end: var(--border);
+  padding-block: 20px;
+
+  &__inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 50px; // TODO: Check without it
+  }
+
+  &__dialog-overlay {
+    @include square(100%);
+
+    position: fixed;
+    inset: 0;
+    border: none;
+
+    @include tablet-above {
+      display: contents;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      column-gap: 8px;
+    }
+
+    &-link {
+      color: var(--color-grey-15);
+      text-decoration: none;
+      padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+      border-radius: var(--border-radius-xs);
+
+
+      @include hover {
+        color: var(--color-orange-50);
+      }
+
+      &.is-active {
+        color: var(--color-grey-15);
+        background-color: var(--color-white-95);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    column-gap: 20px;
+  }
+
+  &__login-button {
+    background-color: var(--color-orange-50);
+    color: var(--color-white);
+    padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+
+    @include hover {
+      background-color: var(--color-orange-70);
+    }
+  }
+}
